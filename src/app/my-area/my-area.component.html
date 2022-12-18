@@ -1,0 +1,16 @@
+<h1>My Area</h1>
+
+<div>
+  Balance: {{ balance }} dollars
+</div>
+
+<form [formGroup]="buyForm" (ngSubmit)="onSubmit()">
+  <label>Euros:</label><br>
+  <input type="range" min="1" max="{{ euros }}" formControlName="amount" (input)="applyFilter($event)"><br>
+  <input type="number" formControlName="amount" (input)="applyFilter($event)"><br><br>
+  <button type="submit">Buy</button>
+</form>
+
+<div *ngIf="invalidAmount">
+  Invalid amount
+</div>
