@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { MyAreaComponent } from './my-area/my-area.component';
+import { BalanceComponent } from './balance/balance.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'my-area', component: MyAreaComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  // { path: 'balance', component: BalanceComponent },
+  { path: '', redirectTo: '/trade', pathMatch: 'full' }
 ];
 
 

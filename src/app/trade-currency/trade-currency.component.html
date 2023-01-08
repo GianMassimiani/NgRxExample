@@ -1,0 +1,30 @@
+<div class="flex text-white font-bold place-content-center">
+    <h2 class="py-4">Account Wallet</h2>
+  </div>
+<div class="flex gap-4 p-6">
+    <!-- Pie chart and table -->
+    <app-balance class="w-full w-4/5"></app-balance>
+
+    <!-- Widget trade -->
+    <div class="w-1/5 border b-wh-400 rounded flex flex-col items-center text-center p-2 bg-gray-800">
+        <div class="text-md font-bold flex flex-col text-white"><span class="uppercase">Trade</span>
+        
+          </div>
+          <form class="p-2">
+            <label for="fromCurrency" class="px-2 block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+            <select id="fromCurrency" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" [(ngModel)]="selectedFromCurrency" name="fromCurrency" (ngModelChange)="onFromCurrencyChange()">
+              <option *ngFor="let currency of fromCurrencies" [value]="currency.name">{{currency.name}}</option>
+            </select>
+            <br>
+            <label for="toCurrency" class="px-2 block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+            <select id="toCurrency" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" [(ngModel)]="selectedToCurrency" name="toCurrency" (ngModelChange)="onToCurrencyChange()">
+              <option *ngFor="let currency of toCurrencies" [value]="currency.name">{{currency.name}}</option>
+            </select>
+            <div class="p-4">
+              <button type="button" (click)="makeTrade()" class="text-white bg-red-800 hover:bg-red-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-800 dark:hover:bg-red-700 dark:focus:ring-red-700 dark:border-red-700">Trade</button>
+            </div>
+          </form>
+        </div>
+    
+</div>
+
